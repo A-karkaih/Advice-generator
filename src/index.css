@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  overflow: hidden;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800 ;
+  background-color:#212732 ;
+}
