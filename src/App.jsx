@@ -35,7 +35,7 @@ function App() {
   return (
     <div className=" w-full h-screen flex justify-center items-center">
       <div className=" flex flex-col items-center w-[80%] rounded-3xl shadow-lg sm:w-[700px] h-[400px] bg-[#313a49]">
-        <span className="cursor-default mt-3 mb-8 text-[12px] text-green-600">
+        <span className="cursor-default mt-3 mb-8 text-[12px] font-semibold  tracking-widest text-green-600">
           Advice #{advice?.id}
         </span>
 
