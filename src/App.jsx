@@ -18,13 +18,18 @@ function App() {
    fetchData();
   }, []);
 
-  const generateAdvice = () => {
-    axios
-      .get("https://api.adviceslip.com/advice")
-      .then((res) => setAdvice(res.data.slip))
-      .catch((err) => {
-        console.log(err);
-      });
+  const generateAdvice = async () => {
+    try {
+       await axios
+         .get("https://api.adviceslip.com/advice")
+         .then((res) => setAdvice(res.data.slip))
+         .catch((err) => {
+           console.log(err);
+         });
+    } catch (error) {
+      console.log(error);
+    }
+ 
   };
 
   return (
@@ -34,7 +39,7 @@ function App() {
           Advice {advice?.id}
         </span>
 
-        <div className="border-[1px] mb-5 flex items-center px-4 text-center  border-white rounded-md w-[80%] h-[40%] ">
+        <div className="border-[1px] mb-5 flex justify-center items-center px-4 text-center  border-white rounded-md w-[80%] h-[40%] ">
           <p className="text-sm cursor-default text-white">{advice?.advice}</p>
         </div>
 
